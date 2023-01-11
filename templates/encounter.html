@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+<button type="button" class="btn btn-primary position-absolute top-0 start-0 m-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-inventory">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16" id="drawer-btn-icon">
+        <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5zM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5z"></path>
+    </svg>
+    <span class="visually-hidden">Open inventory</span>
+</button>
+
+<p>
+    You enter a house. There's two doors. One says "do not enter" and angry zombie growls followed by human screams come from behind it. One says "food here" and it smells like cookies from there. Which do you choose?
+</p>
+
+<button class="btn btn-primary d-block mb-2" type="button">Take the zombie door leading to certain death</button>
+<button class="btn btn-primary d-block mb-2" type="button">Take the cookie door</button>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas-inventory" aria-labelledby="offcanvasLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Inventory</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close inventory"></button>
+    </div>
+    <div class="offcanvas-body">
+        You have a chainsaw.
+    </div>
+</div>
+
+{% endblock %}

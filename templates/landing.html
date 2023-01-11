@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block body %}
+<p>Hello, zombie world</p>
+<a class="btn btn-primary" href="/hideout">Test link</a>
+<div class="card my-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="static/brick.png" class="img-fluid rounded-start p-4" alt="Brick">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">New item!</h5>
+          <p class="card-text">You just found a brick, which is the most useful of all items in a zombie apocalypse.</p>
+          <p class="card-text"><small class="text-muted">Optionally attach angry note before throwing through window</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<img src="static/title.png" class="img-fluid" alt="Title image">
+{% endblock %}
