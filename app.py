@@ -18,6 +18,10 @@ def hideout():
 def encounter():
     return render_template("encounter.html")
 
+@app.route("/opening")
+def opening():
+    return render_template("opening.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=True)
