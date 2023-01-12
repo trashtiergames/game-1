@@ -10934,12 +10934,4 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
-}
-body {
-  background-image: url("../pageturner.gif");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 100vh;
-  padding: 0;
-  margin: 0;
 }/*# sourceMappingURL=styles.css.map */
