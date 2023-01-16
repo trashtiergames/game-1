@@ -7,8 +7,9 @@
     <title>Bricks</title>
     <link href="static/styles/styles.css" rel="stylesheet">
 
-    <!-- Bootstrap, D3, helper libraries and own JS -->
+    <!-- Bootstrap and own JS -->
     <script src="static/bootstrap/js/bootstrap.min.js" defer></script>
+    <script src="static/main.js" defer></script>
 
     <!-- <link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png">
@@ -29,7 +30,21 @@
                 <h5 class="offcanvas-title">Inventory</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close inventory"></button>
             </div>
-            <div class="offcanvas-body">
+            <div class="offcanvas-body" id="inventory-content">
+                <div class="card my-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                        <img src="static/brick.png" class="img-fluid rounded-start p-4" alt="Brick">
+                        </div>
+                        <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">New item!</h5>
+                            <p class="card-text">You just found a brick, which is the most useful of all items in a zombie apocalypse.</p>
+                            <p class="card-text"><small class="text-muted">Optionally attach angry note before throwing through window</small></p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="card my-3" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="col-md-4">
@@ -48,10 +63,10 @@
             <footer class="footer mt-auto py-3">
                 <div class="container">
                     <p>
-                        Health: 100
+                        Health: <span id="health-value"></span>
                     </p>
                     <p>
-                        Sanity: 100
+                        Sanity: <span id="sanity-value"></span>
                     </p>
                 </div>
             </footer>
