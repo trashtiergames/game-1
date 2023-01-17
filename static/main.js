@@ -15,9 +15,17 @@ if (startBtn) {
     startBtn.addEventListener("click", initializeResources())
 }
 
+const chooseBtn = document.getElementById("choose-btn")
+if (chooseBtn) {
+    chooseBtn.addEventListener("click", () => {
+        window.open("/choose?day=" + localStorage.getItem("day"), "_self")
+    })
+}
+
 function initializeResources() {
     localStorage.setItem("hunger", 30)
     localStorage.setItem("thirst", 20)
+    localStorage.setItem("day", 1)
 }
 
 // If there's a dinner div (in hideout), eat and drink if possible
