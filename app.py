@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -22,6 +22,15 @@ def encounter():
 def opening():
     return render_template("opening.html")
 
+@app.route("/game-over")
+def gameOver():
+    reason = request.args.get("reason")
+    return render_template("game-over.html", reason=reason)
+
+    if reason:
+        return render_template("game-over.html", reason=reason)
+    else:
+        return render_template("game-over.html")
 
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=True)

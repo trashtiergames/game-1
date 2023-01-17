@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block inventory %}{% endblock %}
+{% block body %}
+<p>
+    As you try to take your next step, your vision fades, and you slump to the ground.
+</p>
+<p>
+    You died{% if reason %} of {{ reason }}{% endif %}.
+</p>
+<a class="btn btn-dark" href="/landing">Try again</a>
+{% endblock %}

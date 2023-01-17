@@ -1,26 +1,26 @@
 // Manage inventory and some game logic
 
-// This should actually only happen in the beginning
+// Die if needed
+if (localStorage.getItem("hunger") > 99) {
+    window.open("/game-over?reason=hunger", "_self")
+}
+
+if (localStorage.getItem("thirst") > 99) {
+    window.open("/game-over?reason=thirst", "_self")
+}
+
+// If there's a start button, listen for click to initialize
 const startBtn = document.getElementById("start-btn")
 if (startBtn) {
     startBtn.addEventListener("click", initializeResources())
 }
 
 function initializeResources() {
-    localStorage.setItem("health", 50)
-    localStorage.setItem("sanity", 60)
+    localStorage.setItem("hunger", 30)
+    localStorage.setItem("thirst", 20)
 }
 
-healthValueEl = document.getElementById("health-value")
-if (healthValueEl) {
-    healthValueEl.innerHTML = localStorage.getItem("health")
-}
-
-sanityValueEl = document.getElementById("sanity-value")
-if (sanityValueEl) {
-    sanityValueEl.innerHTML = localStorage.getItem("sanity")
-}
-
+// If there's a dinner div (in hideout), eat and drink if possible
 dinnerEl = document.getElementById("dinner")
 if (dinnerEl) {
     foodText = document.createElement("p")
@@ -40,8 +40,7 @@ function checkFood() {
         food.remove()
         return "Yum yum"
     } else {
-        localStorage.setItem("health", localStorage.getItem("health") - 10)
-        localStorage.setItem("sanity", localStorage.getItem("sanity") - 20)
+        localStorage.setItem("hunger", Number(localStorage.getItem("hunger")) + 20)
         return "Aw fuck I'm starving"
     }
 }
@@ -52,8 +51,19 @@ function checkWater() {
         water.remove()
         return "Slurrrrrppp"
     } else {
-        localStorage.setItem("health", localStorage.getItem("health") - 30)
-        localStorage.setItem("sanity", localStorage.getItem("sanity") - 10)
+        localStorage.setItem("thirst", Number(localStorage.getItem("thirst")) + 30)
         return "I wish I had some water"
     }
 } 
+
+// If health value needs to be displayed, get it from local storage
+healthValueEl = document.getElementById("hunger-value")
+if (healthValueEl) {
+    healthValueEl.innerHTML = localStorage.getItem("hunger")
+}
+
+// If sanity value needs to be displayed, get it from local storage
+sanityValueEl = document.getElementById("thirst-value")
+if (sanityValueEl) {
+    sanityValueEl.innerHTML = localStorage.getItem("thirst")
+}
