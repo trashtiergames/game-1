@@ -4,11 +4,13 @@ from random import sample
 app = Flask(__name__)
 
 ENCOUNTER_NAMES = {
+    1: "bakery.html",
     2: ["A2", "B2", "C2", "D2", "E2"],
     3: ["A3", "B3", "C3", "D3", "E3"]
 }
 
 ENCOUNTER_PREVIEWS = {
+    "bakery.html": "I wonder if that empty bakery I found a while ago has some food...",
     "A2": "Find a brick",
     "B2": "Pet a cat",
     "C2": "Escape a zombie",
@@ -28,7 +30,18 @@ def landing():
 @app.route("/choose")
 def choose():
     day = request.args.get("day")
-    name_selection = sample(ENCOUNTER_NAMES[int(day)], 3)
+    if int(day) == 1:
+        encounter = {ENCOUNTER_NAMES[1]: ENCOUNTER_PREVIEWS[ENCOUNTER_NAMES[1]]} 
+        return render_template("choose.html", encounters=encounter)
+
+    encounter_names = ENCOUNTER_NAMES[int(day)]
+    filenames_to_remove = request.args.get("filenamesToRemove").split()
+    if filenames_to_remove:
+        for filename in filenames_to_remove:
+            if filename in encounter_names:
+                encounter_names.remove(filename)
+    
+    name_selection = sample(encounter_names, 3)
     encounters = {
         name_selection[0]: ENCOUNTER_PREVIEWS[name_selection[0]],
         name_selection[1]: ENCOUNTER_PREVIEWS[name_selection[1]],
@@ -42,7 +55,9 @@ def hideout():
 
 @app.route("/encounter")
 def encounter():
-    return render_template("encounter.html")
+    filename = request.args.get("filename")
+    return render_template(filename, filename=filename)
+    # return render_template(filename)
 
 @app.route("/opening")
 def opening():

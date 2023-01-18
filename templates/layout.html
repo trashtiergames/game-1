@@ -4,12 +4,22 @@
     <!-- Standard header tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Snowstorm</title>
+    <title>Three Day Snowstorm</title>
     <link href="static/styles/styles.css" rel="stylesheet">
 
     <!-- Bootstrap and own JS -->
     <script src="static/bootstrap/js/bootstrap.min.js" defer></script>
+    {% if filename is defined %}
+    <script type="text/javascript" defer>
+        const filenameToRemove = {{ filename|tojson }}
+    </script>
+    {% else %}
+    <script type="text/javascript" defer>
+        const filenameToRemove = null
+    </script>
+    {% endif %}
     <script src="static/main.js" defer></script>
+
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon.png">

@@ -9,6 +9,13 @@ if (localStorage.getItem("thirst") > 99) {
     window.open("/game-over?reason=thirst", "_self")
 }
 
+// Save consumed encounters
+if (filenameToRemove) {
+    let namelist = localStorage.getItem("filenamesToRemove")
+    namelist += filenameToRemove + " "
+    localStorage.setItem("filenamesToRemove", namelist)
+}
+
 // If there's a start button, listen for click to initialize
 const startBtn = document.getElementById("start-btn")
 if (startBtn) {
@@ -18,14 +25,31 @@ if (startBtn) {
 const chooseBtn = document.getElementById("choose-btn")
 if (chooseBtn) {
     chooseBtn.addEventListener("click", () => {
-        window.open("/choose?day=" + localStorage.getItem("day"), "_self")
+        let url = "/choose?day=" + localStorage.getItem("day")
+        url += "&filenamesToRemove=" + localStorage.getItem("filenamesToRemove")
+        window.open(url, "_self")
     })
 }
 
+// const encounterBtns = document.getElementsByClassName("encounter-btn")
+// if (encounterBtns) {
+//     for (const btn of encounterBtns) {
+//         btn.addEventListener("click", (e) => {
+//             // e.preventDefault()
+//             // href = btn.href
+//             // updatedHref = href + "&filenamesToRemove=" + localStorage.getItem("filenamesToRemove")
+//             // console.log(updatedHref)
+//             // window.open(updatedHref, "_self")
+//         })
+//     }
+// }
+
 function initializeResources() {
+    localStorage.clear()
     localStorage.setItem("hunger", 30)
     localStorage.setItem("thirst", 20)
     localStorage.setItem("day", 1)
+    localStorage.setItem("filenamesToRemove", " ")
 }
 
 // If there's a dinner div (in hideout), eat and drink if possible

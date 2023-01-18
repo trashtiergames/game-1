@@ -6,9 +6,8 @@
 <p>
     There's always three choices (or is there). The buttons get added according to the data put into the template by the server.
 </p>
-<a class="btn btn-primary" href="/encounter">Here's a sample button to an encounter</a>
 {% for encounter_name in encounters %}
-    <a class="btn btn-dark" href="/{{ encounter_name }}">{{ encounters[encounter_name] }}</a>
+    <a class="btn btn-dark encounter-btn" href="/encounter?filename={{ encounter_name }}">{{ encounters[encounter_name] }}</a>
 {% endfor %}
 
 {% endblock %}
