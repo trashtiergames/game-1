@@ -30,6 +30,7 @@ def landing():
 @app.route("/choose")
 def choose():
     day = request.args.get("day")
+    print("Day:", day)
     if int(day) == 1:
         encounter = {ENCOUNTER_NAMES[1]: ENCOUNTER_PREVIEWS[ENCOUNTER_NAMES[1]]} 
         return render_template("choose.html", encounters=encounter)

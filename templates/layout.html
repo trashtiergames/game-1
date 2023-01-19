@@ -29,13 +29,14 @@
 </head>
 {% block outer_body %}
 <body>
-    <div class="container pt-5">
+    <div class="container pt-5" id="main-container">
         {% block inventory %}
         <button type="button" class="btn btn-dark position-absolute top-0 start-0 m-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-inventory">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16" id="drawer-btn-icon">
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16" id="drawer-btn-icon">
                 <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5zM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5z"></path>
-            </svg>
-            <span class="visually-hidden">Open inventory</span>
+            </svg> -->
+            <!-- <span class="visually-hidden">Open inventory</span> -->
+            Open inventory
         </button>
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas-inventory" aria-labelledby="offcanvasLabel">
             <div class="offcanvas-header">
@@ -43,34 +44,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close inventory"></button>
             </div>
             <div class="offcanvas-body" id="inventory-content">
-                <div class="card my-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                        <img src="static/brick.png" class="img-fluid rounded-start p-4" alt="Brick">
-                        </div>
-                        <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">New item!</h5>
-                            <p class="card-text">You just found a brick, which is the most useful of all items in a zombie apocalypse.</p>
-                            <p class="card-text"><small class="text-muted">Optionally attach angry note before throwing through window</small></p>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card my-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                        <img src="static/brick.png" class="img-fluid rounded-start p-4" alt="Brick">
-                        </div>
-                        <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">New item!</h5>
-                            <p class="card-text">You just found a brick, which is the most useful of all items in a zombie apocalypse.</p>
-                            <p class="card-text"><small class="text-muted">Optionally attach angry note before throwing through window</small></p>
-                        </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             <footer class="footer mt-auto py-3">
                 <div class="container">

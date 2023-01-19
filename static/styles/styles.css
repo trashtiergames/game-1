@@ -10942,4 +10942,12 @@ textarea.form-control-lg {
   height: 100vh;
   padding: 0;
   margin: 0;
+}
+
+.direct-discourse {
+  font-style: italic;
+}
+
+p {
+  margin-top: 16px;
 }/*# sourceMappingURL=styles.css.map */
