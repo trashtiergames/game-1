@@ -10934,4 +10934,12 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+.snowy {
+  background-image: url("../title_animation.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
 }/*# sourceMappingURL=styles.css.map */

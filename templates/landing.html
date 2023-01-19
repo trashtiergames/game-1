@@ -1,6 +1,17 @@
 {% extends "layout.html" %}
 {% block inventory %}{% endblock %}
-{% block body %}
-<p>This the landing page.</p>
-<a class="btn btn-dark" href="/opening" id="start-btn">Start playing</a>
+{% block outer_body %}
+<body class="snowy">
+    
+    <div class="container text-center align-items-center mt-5 row">
+        <div class="col-1"></div>
+        <div class="col-8 position-absolute top-50 start-50 translate-middle">
+            <h1 class="display-1 fw-bold">
+                Three Day Snowstorm
+            </h1>
+            <a class="btn btn-dark" href="/opening">Start Game</a>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</body>
 {% endblock %}

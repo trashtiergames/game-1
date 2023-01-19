@@ -27,6 +27,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png">
     <link rel="manifest" href="/static/favicons/site.webmanifest">
 </head>
+{% block outer_body %}
 <body>
     <div class="container pt-5">
         {% block inventory %}
@@ -86,4 +87,5 @@
         {% block body %}{% endblock %}
     </div>
 </body>
+{% endblock %}
 </html>
