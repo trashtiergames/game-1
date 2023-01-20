@@ -273,7 +273,7 @@ function addItemCardtoInventory(item, n) {
         let leftColEl = document.createElement("div")
         leftColEl.className = "col-4"
         let imgEl = document.createElement("img")
-        imgEl.src = `${item}.png`
+        imgEl.src = `static/${item}.png`
         imgEl.className = "img-fluid rounded-start p-1"
         let rightColEl = document.createElement("div")
         rightColEl.className = "col-8"
