@@ -273,7 +273,7 @@ function addItemCardtoInventory(item, n) {
         let leftColEl = document.createElement("div")
         leftColEl.className = "col-4"
         let imgEl = document.createElement("img")
-        imgEl.src = `images/${item}.png`
+        imgEl.src = `static/images/${item}.png`
         imgEl.className = "img-fluid rounded-start p-1"
         let rightColEl = document.createElement("div")
         rightColEl.className = "col-8"
@@ -314,7 +314,7 @@ function addItemCardtoInventory(item, n) {
 
 function updateOffcanvasInventory() {
     let inventory = document.getElementById("inventory-content")
-    while (inventory.lastChild) {
+    while (inventory & inventory.lastChild) {
         inventory.removeChild(inventory.lastChild);
     }
     if (inventory) {
