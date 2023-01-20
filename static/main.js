@@ -261,7 +261,7 @@ function hasBricks() {
     } else {
         return false
     }
-} 
+}
 
 function addItemCardtoInventory(item, n) {
     let inventory = document.getElementById("inventory-content")
