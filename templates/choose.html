@@ -1,10 +1,7 @@
 {% extends "layout.html" %}
 {% block body %}
 <p>
-    This is where you're out of the hideout probably and you're deciding what to do.
-</p>
-<p>
-    There's always three choices (or is there). The buttons get added according to the data put into the template by the server.
+    Alright, as I see it, here are my options to find some food or water.
 </p>
 {% for encounter_name in encounters %}
     <a class="btn btn-dark encounter-btn m-1" href="/encounter?filename={{ encounter_name }}">{{ encounters[encounter_name] }}</a>
